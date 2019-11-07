@@ -8,8 +8,8 @@ Created on Tue Nov  5 17:04:39 2019
 
 from sklearn.model_selection import LeaveOneGroupOut
 import pandas as pd
-from Codes.loading_data import load_data
-from Codes.Machine_Learning_Algo import ML_SVM, ML_RF, ML_FC_ANN
+from classes.loading_data import load_data
+from classes.Machine_Learning_Algo import ML_SVM, ML_RF, ML_FC_ANN
 
 
 def main():
