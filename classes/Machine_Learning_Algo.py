@@ -16,6 +16,7 @@ from keras.utils import np_utils
 import keras
 from sklearn.model_selection import LeaveOneGroupOut
 from keras.callbacks import EarlyStopping
+from sklearn.naive_bayes import GaussianNB
 
 
 
@@ -177,6 +178,31 @@ class ML_FC_ANN:
         Y_pred  = np.argmax(prediction, axis=1)
         return confusion_matrix(Y_test, Y_pred), recall_score(Y_test, 
                                Y_pred, average='macro') 
+        
+        
+        
+class baseline_Gaussian_NB:
+    
+    """ This class performs the task of applying gaussian naive byes for emotion
+    recogition """
+    
+    def __init__(self, X, Y):
+        self.X = X
+        self.Y = Y
+        
+    def baseline_train(self):
+        gnb_clf = GaussianNB()
+        gnb_clf.fit(self.X, self.Y)
+        return gnb_clf
+    
+    def gnb_baseline_performance(self, model, X_test, Y_test):
+        prediction = model.predict(X_test)
+        return confusion_matrix(Y_test, prediction), recall_score(Y_test, 
+                               prediction, average='macro')
+        
+        
+        
+    
 
         
         
