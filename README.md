@@ -28,7 +28,12 @@ The processed data can be loaded using the ![load_data](classes/loading_data.py)
 
 For running the machine learning models, we use the script ![Machine_Learning_Algo.py](classes/Machine_Learning_Algo.py). It contains classes for running the ML algorithm for emotion recognition task.
 
-1. The class ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15`
+1. The class *baseline_Gaussian_NB* provides the functions for training and testing for Gaussian Naive Bayes algorithm. It will be used as baseline in our project.
+2. The class *ML_SVM* provides the functions for training and testing for Support Vector Machine with RBF kernel algorithm. We perform grid search of ```C``` and ```gamma``` value for all the combination in ```[0.001, 0.01, 0.1, 1, 10]```.
+3. The class *ML_RF* provides the functions for training and testing for Random Forest algorithm. We perform the parameter tuning of estimators in 80, 100, and 120.
 
 
+## Comparison of performance
+
+The ![result_visualization.ipynb](result_visualization.ipynb) shows a detailed performance comparison across different Machine Learning algorithm, different speakers and across different emotion class. 
 
